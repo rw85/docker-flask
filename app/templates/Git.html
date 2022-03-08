@@ -50,14 +50,47 @@
             </nav>
         </header>
     </div>
+    <div class="row">
+
+        <div class="col-8">
+            <p>
+                Branches
+            </p>
+            <p>
+                Branches are used to isolate development work without affecting other branches in the repository.
+            </p>
+            <p>
+                Merge
+            </p>
+            <p>
+                The git merge command lets you take independent lines of development on separate branches and integrate them into a single branch.
+            </p>
+            <p>
+                Commit
+            </p>
+            <p>
+                The git commit command is similar to saving a file. A commit is a change to one or more files to your branch.
+            </p>
+
+        </div>
+        <div class="col">
+            <p>
+                 Tags
+            </p>
+            <p>
+                Tags are specific reference points in the git history. They are used to capture an individual point in your repository's history.
+            </p>
+            <p>
+                Repositories
+            </p>
+            <p>
+                A git repository is the .git/ folder inside a project. It tracks all changes made to files in the project, building a history over time.
+            </p>
+        </div>
     <div class="container">
         {% block content %}
         {% endblock %}
     </div>
-    <footer>
-        Environment: {{ deployment_environment }} - Copyright: {{ year }}
-        Message: {{ mymessage }} {{ format_price(100) }}
-    </footer>
 
 </div>
 
