@@ -30,19 +30,20 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="{{ url_for('simple_pages.show', page="Home")}}">Home</a>
+                                <a class="nav-link" aria-current="page"
+                                   href="{{ url_for('simple_pages.show', page="Home") }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url_for('simple_pages.show', page="Git")}}">Git</a>
+                                <a class="nav-link" href="{{ url_for('simple_pages.show', page="Git") }}">Git</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{ url_for('simple_pages.show', page="Docker")}}">Docker</a>
+                                <a class="nav-link active" href="{{ url_for('simple_pages.show', page="Docker") }}">Docker</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url_for('simple_pages.show', page="PythonFlask")}}">Python/Flask</a>
+                                <a class="nav-link" href="{{ url_for('simple_pages.show', page="PythonFlask") }}">Python/Flask</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url_for('simple_pages.show', page="CICD")}}">CI/CD</a>
+                                <a class="nav-link" href="{{ url_for('simple_pages.show', page="CICD") }}">CI/CD</a>
                             </li>
                         </ul>
                     </div>
@@ -50,21 +51,74 @@
             </nav>
         </header>
     </div>
-    <div class="container">
-        {% block content %}
-        {% endblock %}
+    <div class="row">
+
+        <div class="col-8">
+            <p>
+                Containers
+            </p>
+            <p>
+                A container is a standard unit of software that packages up code and all its dependencies so the
+                application runs quickly and reliably from one computing environment to another.
+            </p>
+            <p>
+                Images
+            </p>
+            <p>
+                A Docker container image is a lightweight, standalone, executable package of software that includes
+                everything needed to run an application.
+            </p>
+            <p>
+                Docker commands
+            </p>
+            <p>
+                docker run - runs a command in a new container
+            </p>
+            <p>
+                docker start - starts one or more stopped containers
+            </p>
+            <p>
+                docker stop - stops one or more running containers
+            </p>
+            <p>
+                docker build - builds an image from a Docker file
+            </p>
+            <p>
+                docker pull - pulls an image or a repository from a registry
+            </p>
+            <p>
+                docker push - pushes an image or a repository to a registry
+            </p>
+        </div>
+
+        <div class="col-4">
+            <p>
+                How to start the project
+            </p>
+            <p>
+                To start the project, first I had to clone the repository from Professor Williams in PyCharm. To access
+                the container with the terminal, you have to do the command docker ps to get the container ID. Then to
+                access the container, you have to run the command docker exec -it
+                <container_id> /bin/bash.
+            </p>
+            <p>
+                Link to repository on docker hub
+            </p>
+            <p>
+                <a>https://hub.docker.com/repository/docker/rwalker1/flask</a>
+            </p>
+        </div>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+
     </div>
-    <footer>
-        Environment: {{ deployment_environment }} - Copyright: {{ year }}
-        Message: {{ mymessage }} {{ format_price(100) }}
-    </footer>
 
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 
 </body>
 </html>

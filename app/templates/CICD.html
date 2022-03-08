@@ -50,14 +50,41 @@
             </nav>
         </header>
     </div>
+     <div class="row">
+
+        <div class="col-8">
+            <p>
+                How the project is set up
+            </p>
+            <p>
+                 The project is set up in which when the master branch is pushed to the github repository, it also triggers a push to Heroku.
+            </p>
+            <p>
+                How you can review code
+            </p>
+            <p>
+                To review code, after you make a pull request you can go in to see what changes have been made.
+            </p>
+            <p>
+                How to deploy master to production server
+            </p>
+            <p>
+                To deploy master to production server, I do a git push, which triggers the workflow to push first to github, then to heroku.
+            </p>
+
+        </div>
+        <div class="col">
+            <p>
+                 How to deploy an image of project to Dockerhub when master is updated
+            </p>
+            <p>
+                To deploy an image of the project to Dockerhub when master is updated, I have my code set up to do so.
+            </p>
+        </div>
     <div class="container">
         {% block content %}
         {% endblock %}
     </div>
-    <footer>
-        Environment: {{ deployment_environment }} - Copyright: {{ year }}
-        Message: {{ mymessage }} {{ format_price(100) }}
-    </footer>
 
 </div>
 
